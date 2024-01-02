@@ -175,6 +175,7 @@ h6 {
 /************************/
 
 .page {
+  background-color: #000;
   max-width: 100%;
   overflow: hidden;
   position: relative;
@@ -668,7 +669,7 @@ h6 {
 
 .case {
   padding-top: 122px;
-  padding-bottom: 90px;
+  padding-bottom: 55px;
 }
 
 .case .title {
@@ -683,16 +684,12 @@ h6 {
   text-transform: uppercase;
 }
 
-.events + .h5 {
-  margin-top: 32px;
-}
-
 .events {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 -27vw;
-  padding: 0 27vw;
+  padding: 0 27vw 35px;
   gap: 32px;
   overflow-y: auto;
   -ms-overflow-style: none;
@@ -716,6 +713,14 @@ h6 {
   transition: all 0.2s linear;
   font-family: "PoppinsM", sans-serif;
   cursor: pointer;
+  position: relative;
+}
+
+.event .fourthBg {
+  width: 600px;
+  height: 350px;
+  max-width: initial;
+  max-height: initial;
 }
 
 .event:hover {
@@ -724,11 +729,13 @@ h6 {
           box-shadow: 15px 19px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
-.event img {
+.event .event__image {
   max-height: 150px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  position: relative;
+  z-index: 10;
 }
 
 .event__description {
