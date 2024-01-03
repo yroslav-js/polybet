@@ -182,6 +182,11 @@ h6 {
   color: #ffffff;
 }
 
+.logo {
+  width: 140px;
+  height: auto;
+}
+
 .header {
   position: fixed;
   display: -webkit-box;
@@ -302,8 +307,8 @@ h6 {
   right: 0;
   background-image: url(../img/bg/grid.svg);
   background-repeat: repeat;
-  z-index: 1;
-  opacity: 0.5;
+  z-index: 3;
+  opacity: 0.7;
 }
 
 .section {
@@ -456,6 +461,7 @@ h6 {
   font-size: 14px;
   font-family: "PoppinsMI", sans-serif;
   line-height: 23px;
+  text-transform: uppercase;
 }
 
 .mainSection {
@@ -555,8 +561,7 @@ h6 {
   margin-bottom: 27px;
 }
 
-.experienceBetting .h4 + .h4 {
-  margin-top: 30px;
+.experienceBetting .h4 {
   margin-bottom: 20px;
 }
 
@@ -712,13 +717,50 @@ h6 {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   font-family: "PoppinsM", sans-serif;
-  cursor: pointer;
+  cursor: url("../img/cursor.png"), pointer;
   position: relative;
 }
 
 .event .fourthBg {
   width: 600px;
   height: 350px;
+  max-width: initial;
+  max-height: initial;
+}
+
+.events .bgWrapper {
+  top: 150px;
+}
+
+.event__button {
+  margin-left: auto;
+  width: 108px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "InterS", sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.events .firstBg {
+  z-index: 0;
   max-width: initial;
   max-height: initial;
 }
@@ -741,7 +783,7 @@ h6 {
 .event__description {
   font-size: 14px;
   line-height: 18px;
-  margin: 12px 16px 15px;
+  margin: 12px 16px 4px;
 }
 
 .tags {
@@ -750,6 +792,9 @@ h6 {
   display: flex;
   margin: 0 16px;
   gap: 3px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 .tag {
@@ -770,6 +815,10 @@ h6 {
   line-height: 20px;
   text-transform: capitalize;
   opacity: 0.5;
+}
+
+.event:hover .event__button {
+  opacity: 1;
 }
 
 .threePartSection {
@@ -808,11 +857,12 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 280px;
+  padding-top: 200px;
   padding-bottom: 136px;
 }
 
 .secondThreePart {
+  padding-top: 180px;
   padding-bottom: 155px;
 }
 
@@ -1060,7 +1110,7 @@ textarea::placeholder {
 }
 
 .roadmap {
-  padding-top: 317px;
+  padding-top: 162px;
 }
 
 .bgText {
@@ -1083,7 +1133,7 @@ textarea::placeholder {
 }
 
 .roadmap .title {
-  margin-bottom: 150px;
+  margin-bottom: 235px;
 }
 
 .plan {
@@ -1093,9 +1143,11 @@ textarea::placeholder {
   gap: 40px;
   overflow-x: auto;
   margin: 0 -27vw;
-  padding: 0 27vw 123px;
+  padding: 0 27vw 112px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .plan::-webkit-scrollbar {
@@ -1105,18 +1157,6 @@ textarea::placeholder {
 .plan > li {
   width: 100%;
   white-space: nowrap;
-  height: 340px;
-  position: relative;
-}
-
-.plan > li::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 4px;
-  width: calc(100% - 8px);
-  height: 1px;
-  background-color: #fff;
 }
 
 .roadmap__plan {
@@ -1141,45 +1181,8 @@ textarea::placeholder {
   left: 10px;
 }
 
-.plan > li > span::before,
-.plan > li > span::after {
-  content: "";
-  position: absolute;
-  width: 9px;
-  height: 1px;
-  background-color: #fff;
-  right: -24px;
-}
-
-.plan > li > span::before {
-  bottom: 3px;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.plan > li > span::after {
-  bottom: -3px;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
 .plan > li:last-child > span {
   display: none;
-}
-
-.activePlan .h4 {
-  color: #999EFA;
-}
-
-.plan > .activePlan::before {
-  background-color: #999EFA;
-}
-
-.plan > .activePlan > span::after,
-.plan > .activePlan > span::before {
-  background-color: #999EFA;
 }
 
 .partnersSection {
@@ -1393,6 +1396,15 @@ textarea {
   }
 }
 
+@media (max-width: 1280px) {
+  .experienceBetting {
+    gap: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 @media (max-width: 1240px) {
   .partners {
     gap: 0;
@@ -1403,7 +1415,6 @@ textarea {
   }
 
   .main,
-  .experienceBetting,
   .tokenomics {
     gap: 0;
     -webkit-box-pack: justify;
@@ -1415,9 +1426,7 @@ textarea {
   .mainTwo {
     left: -200px;
   }
-}
 
-@media (max-width: 1200px) {
   .functionality li {
     width: 43vw;
   }
@@ -1437,7 +1446,7 @@ textarea {
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1100px) {
   .experienceBetting {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1445,7 +1454,9 @@ textarea {
             flex-direction: column;
     gap: 123px;
   }
+}
 
+@media (max-width: 1080px) {
   .stake {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
